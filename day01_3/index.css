@@ -1,0 +1,31 @@
+.box{
+    width:300px;
+    height:150px;
+    border:1px solid #000;
+    border-bottom-width:150px;
+    margin:0 auto;
+    border-radius:50%;
+}
+/*  伪元素选择器 */
+.box::before{
+    content: "";
+    display: block;
+    width:50px;
+    height:50px;
+    background-color:#000;
+    border-radius: 50%;
+    border:50px solid #fff;
+    float:left;
+    margin-top:75px;
+}
+.box::after{
+    content: "";
+    display: block;
+    width:50px;
+    height:50px;
+    background-color:#fff;
+    border-radius: 50%;
+    border:50px solid #000;
+    float:right;
+    margin-top:75px;
+}
