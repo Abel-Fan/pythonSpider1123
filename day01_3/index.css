@@ -5,12 +5,13 @@
     border-bottom-width:150px;
     margin:0 auto;
     border-radius:50%;
-    transition:all 1s;
+    transition:all 10s;
+    transform: scale(0.2);
 }
 
 /* 伪类选择器 */
 .box:hover{
-    transform: rotate(1turn);
+    transform: scale(10) rotate(1turn);
 }
 /*  :hover  选中元素的鼠标移入状态 */
 

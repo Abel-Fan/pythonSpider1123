@@ -1,0 +1,13 @@
+div{
+    width:200px;
+    height:200px;
+    border:1px solid red;
+    margin:0 auto;
+    border-radius: 10px;
+}
+div p{
+    background-color:red;
+}
+p{
+    background-color:yellow;
+}
