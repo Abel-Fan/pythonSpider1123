@@ -1,10 +1,16 @@
 import requests
 from lxml import etree
+import time,random
 # 推导式
 # # 列表推导式
 urls = [ "https://movie.douban.com/top250?start=%s"%i for i in range(0,226,25)]
 
+data = []
+
 def getPageData(url):
+    global data
+    # time.sleep(random.randint(0,3))
+    print("%s正在爬取..."%url)
     response = requests.get(url,headers={
         'user-agent':'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'
     })
@@ -24,6 +30,11 @@ def getPageData(url):
     inqs = html.xpath("//p[@class='quote']/span/text()")
 
     pageData = list(zip(titles,dirs,rats,inqs))
-    print(pageData)
+    data += pageData
 
-getPageData(urls[1])
+for i in urls:
+    getPageData(i)
+
+import pickle
+with open("dbData.txt","wb") as f:
+    pickle.dump(data,f)
