@@ -149,25 +149,32 @@ while 条件:
 
 # 猜数字  0-99 num
 
-import random
+# import random
+#
+# num = random.randint(0,99)
+# cs = 0
+#
+# while True:
+#     if cs<5:
+#         cs+=1
+#     else:
+#         print("你太笨了!!")
+#         break
+#     num1 = int(input("请输入一个数(0,99):\n"))
+#     if num==num1:
+#         print("恭喜你胜利!!")
+#         break  # 终止循环   continue 继续
+#     elif num1<num:
+#         print("太小了!")
+#     else:
+#         print("太大了!")
 
-num = random.randint(0,99)
-cs = 0
-
-while True:
-    if cs<5:
-        cs+=1
-    else:
-        print("你太笨了!!")
-        break
-    num1 = int(input("请输入一个数(0,99):\n"))
-    if num==num1:
-        print("恭喜你胜利!!")
-        break  # 终止循环   continue 继续
-    elif num1<num:
-        print("太小了!")
-    else:
-        print("太大了!")
-
-
+#
+# def aa(num):
+#     print(num)
+#
+#
+# for i in range(10):
+#     aa(i)
+#
 
