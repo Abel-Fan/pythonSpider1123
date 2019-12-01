@@ -22,15 +22,29 @@ def getPageData(url):
     dirs = html.xpath("//div[@class='item']/div[@class='info']/div[@class='bd']/p[1]/text()")
     # dirs list
     dirs = [ s.strip() for s in dirs]
+    dirs2 = []
+    for i in range(0,50,2):
+        dirs2.append(dirs[i]+dirs[i+1])
+
 
     # rating_num
     rats = html.xpath("//div[@class='star']/span[2]/text()")
 
     # inq
-    inqs = html.xpath("//p[@class='quote']/span/text()")
+    inqs = html.xpath("//div[@class='info']/div[@class='bd']")
+    inqs2 = []
+    for item in inqs:
+        zt = item.xpath("./p[contains(@class,'quote')]/span/text()")
+        if len(zt)>0:
+            inqs2.append(zt[0])
+        else:
+            inqs2.append("")
 
-    pageData = list(zip(titles,dirs,rats,inqs))
+
+
+    pageData = list(zip(titles,dirs2,rats,inqs2))
     data += pageData
+
 
 for i in urls:
     getPageData(i)
